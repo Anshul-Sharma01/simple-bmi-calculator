@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bmi</title>
+    <link rel="stylesheet" href="authstyle.css">
+</head>
+<body>
+    <% if(bmiData.length > 0){ %>
+        <table border="2">
+            <thead>
+                <th>S.No</th>
+                <th>Email</th>
+                <th>Height</th>
+                <th>Weight</th>
+                <th>Bmi</th>
+                <th>Bmi-Value</th>
+            </thead>
+            <tbody>
+                <% bmiData.forEach((ele,ind) => { %>
+                    <tr>
+                        <td><%= ind + 1 %></td>
+                        <td><%= ele.email %></td>
+                        <td><%= ele.height %></td>
+                        <td><%= ele.weight %></td>
+                        <td><%= ele.bmi %></td>
+                        <td><%= ele.bmivalue %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        <a href="/calculateBmi"><button>Claculate again ?</button></a>
+        <% }else{ %>
+            <h1>You haven't calculated bmi yet..</h1>
+            <a href="/calculateBmi"><button>Claculate Bmi</button></a>
+    <% } %> 
+    <a href="/"><Button>Go Back</Button></a>
+</body>
+</html>
